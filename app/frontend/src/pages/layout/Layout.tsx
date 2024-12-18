@@ -33,7 +33,7 @@ export const Layout = () => {
                 <WarningBanner />
                 <div className={styles.headerContainer}>
                     <div className={styles.headerTitleContainer}>
-                        <img src={bsp} alt="BSP HealthCare Plan 2024" className={styles.headerLogo} />
+                        <img src={bsp} alt="BSP WeKnow" className={styles.headerLogo} />
                         <h1 className={styles.headerTitle}><Title /></h1>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ export const Layout = () => {
                 <WarningBanner />
                 <div className={styles.headerContainer}>
                     <div className={styles.headerTitleContainer}>
-                        <img src={hwd} alt="BSP HealthCare Plan 2024" className={styles.headerLogo} />
+                        <img src={hwd} alt="BSP WeKnow" className={styles.headerLogo} />
                     </div>
                 </div>
             </footer>
