@@ -30,7 +30,7 @@
     justify-content: space-around;
     margin-right: 12px;
     margin-left: 12px;
-    padding: 14px;
+    padding: 10px;
 }
 
 .headerTitleContainer {
@@ -51,7 +51,7 @@
 }
 
 .footer {
-    background-color: #006cbf;
+    background-color: #82eefd;
     color: #f2f2f2;
 }
 

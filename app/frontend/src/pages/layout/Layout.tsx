@@ -41,7 +41,7 @@ export const Layout = () => {
 
             <Outlet />
 
-            <footer>
+            <footer className={styles.footer} role={"banner"}>
                 <WarningBanner />
                 <div className={styles.headerContainer}>
                     <div className={styles.headerTitleContainer}>
