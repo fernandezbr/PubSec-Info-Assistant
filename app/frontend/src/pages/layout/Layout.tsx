@@ -43,9 +43,12 @@ export const Layout = () => {
 
             <footer>
                 <WarningBanner />
-                <div className={styles.headerContainer}>
-                    <div className={styles.headerTitleContainer}>
-                        <img src={hwd} alt="BSP WeKnow" className={styles.headerLogo} />
+                <div className={styles.footerContainer}>
+                    <div className={styles.footerTitleContainer}>
+                        <span className={styles.footerTitle}>
+                            <strong>Disclaimer: </strong>Please be aware that this AI is still in pilot and its output may not always be accurate or complete.
+                            It is highly recommended to exercise user discretion when interpreting and utilizing the information provided.
+                        </span>
                     </div>
                 </div>
             </footer>

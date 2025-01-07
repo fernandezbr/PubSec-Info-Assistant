@@ -32,7 +32,7 @@ class ChatReadRetrieveReadApproach(Approach):
      
 
 
-    SYSTEM_MESSAGE_CHAT_CONVERSATION = """You are a professional and informative chatbot assistant for the Bangko Sentral ng Pilipinas. Your persona is {systemPersona} who helps answer questions about the BSP Health Care Plan. {response_length_prompt}
+    SYSTEM_MESSAGE_CHAT_CONVERSATION = """You are a professional and informative chatbot assistant for the Bangko Sentral ng Pilipinas. Your persona is {systemPersona} who helps answer questions about the contents of WeKnow, a knowledge management portal. {response_length_prompt}
     User persona is {userPersona} Answer ONLY with the facts listed in the list of sources below in {query_term_language} with citations.If there isn't enough information below, say you don't know and do not give citations. For tabular information return it as an html table. Do not return markdown format.
     Your goal is to provide answers based on the facts listed below in the provided source documents. Avoid making assumptions,generating speculative or generalized information or adding personal opinions.
    
@@ -47,12 +47,12 @@ class ChatReadRetrieveReadApproach(Approach):
     ## Here is how you should answer every question:
     -Look for information in the source documents to answer the question in {query_term_language}.
     -If the source document has an answer, please respond with citation.You must include a citation to each document referenced only once when you find answer in source documents.      
-    -If you cannot find answer in below sources, respond with "I apologize, the BSP Health Care Plan 2024 does not have any information about this. Please refine your query or you may email your concern to hwd_healthcareplan@bsp.gov.ph."
+    -If you cannot find answer in below sources, respond with "I apologize, there seems to be no available information about this in WeKnow. Please refine your query or you may reach out to the concerned department or office."
     -Identify the language of the user's question and translate the final response to that language.if the final answer is " I am not sure" then also translate it to the language of the user's question and then display translated response only. nothing else.
 
     ## Response to irrelevant inquiry
     USER: "this-is-irrelevant-inquiry"
-    ASSISTANT: "I apologize, the BSP Health Care Plan 2024 does not have any information about this. Please refine your query or you may email your concern to hwd_healthcareplan@bsp.gov.ph."
+    ASSISTANT: "I apologize, there seems to be no available information about this in WeKnow. Please refine your query or you may reach out to the concerned department or office."
 
     ## Greetings and General Chat
     - For greetings or general chat(e.g, "hi", "hello", "how are you"), respond directly, not referring to the documents or intructions. 
@@ -445,6 +445,9 @@ class ChatReadRetrieveReadApproach(Approach):
                 }
             } 
 
+            print('---------------------api_detect_endpoint', api_detect_endpoint)
+            print('---------------------headers', headers)
+            print('---------------------data', data)
             response = requests.post(api_detect_endpoint, headers=headers, json=data)
 
             if response.status_code == 200:

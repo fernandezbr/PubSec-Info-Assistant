@@ -12,9 +12,9 @@ export type ExampleModel = {
 
 
 const EXAMPLES: ExampleModel[] = [
-    { text: "What is health services quota?", value: "What is health services quota?" },
-    { text: "Would there be no limit in terms of privileges under the plan?", value: "Would there be no limit in terms of privileges under the plan?" },
-    { text: "Who are covered by the mandatory AME?", value: "Who are covered by the mandatory AME?" }
+    { text: "What are the three pillars of central banking?", value: "What are the three pillars of central banking?" },
+    { text: "Where do I download BSP Memo template?", value: "Where do I download BSP Memo template?" },
+    { text: "What is the BSP Employee's Charter?", value: "What is the BSP Employee's Charter?" }
 ];
 
 interface Props {

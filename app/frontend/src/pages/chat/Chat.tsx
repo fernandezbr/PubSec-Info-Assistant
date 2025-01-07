@@ -338,21 +338,21 @@ const Chat = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.subHeader}>
+            {/* <div className={styles.subHeader}>
                 <ChatModeButtonGroup className="" defaultValue={activeChatMode} onClick={onChatModeChange} featureFlags={featureFlags} /> 
                 <div className={styles.commandsContainer}>
                     <ClearChatButton className={styles.commandButton} onClick={clearChat} disabled={!lastQuestionRef.current || isLoading} />
                     <SettingsButton className={styles.commandButton} onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} />
                     <InfoButton className={styles.commandButton} onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)} />
                 </div>
-            </div>
+            </div> */}
             <div className={styles.chatRoot}>
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
                             {activeChatMode == ChatMode.WorkOnly ? 
                                 <div>
-                                    <h1 className={styles.chatEmptyStateTitle}>Ask Doc</h1>
+                                    <h1 className={styles.chatEmptyStateTitle}>Ask WeKnow</h1>
                                 </div>
                             : activeChatMode == ChatMode.WorkPlusWeb ?
                                 <div>
@@ -435,7 +435,7 @@ const Chat = () => {
                         )}
                         <QuestionInput
                             clearOnSend
-                            placeholder="Type a new question (e.g. What is health services quota?)"
+                            placeholder="Type a new question (e.g. What is the BSP Employee's Charter?)"
                             disabled={isLoading}
                             onSend={question => makeApiRequest(question, defaultApproach, {}, {}, {})}
                             onAdjustClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)}
@@ -444,13 +444,6 @@ const Chat = () => {
                             onClearClick={clearChat}
                             onRegenerateClick={() => makeApiRequest(lastQuestionRef.current, defaultApproach, {}, {}, {})}
                         />
-                        <div>
-                            <span className={styles.chatEmptyStateSubtitle}>
-                                <strong>Disclaimer: </strong>Please be aware that this AI is still in pilot and its output may not always be accurate or complete.
-                                It is highly recommended to exercise user discretion when interpreting and utilizing the information provided.
-                                For concerns, you may reach HWD through email: hwd_healthcareplan@bsp.gov.ph
-                            </span>
-                        </div>
                     </div>
                 </div>
 
