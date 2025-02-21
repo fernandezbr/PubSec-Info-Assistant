@@ -15,7 +15,7 @@ import avatar from "../../assets/avatar.png";
 import { chatApi, Approaches, ChatResponse, ChatRequest, ChatTurn, ChatMode, getFeatureFlags, GetFeatureFlagsResponse } from "../../api";
 import { Answer, AnswerError, AnswerLoading } from "../../components/Answer";
 import { QuestionInput } from "../../components/QuestionInput";
-import { ExampleList } from "../../components/Example";
+// import { ExampleList } from "../../components/Example";
 import { UserChatMessage } from "../../components/UserChatMessage";
 import { AnalysisPanel, AnalysisPanelTabs } from "../../components/AnalysisPanel";
 import { SettingsButton } from "../../components/SettingsButton";
@@ -34,8 +34,8 @@ const Chat = () => {
     const [isInfoPanelOpen, setIsInfoPanelOpen] = useState(false);
     const [retrieveCount, setRetrieveCount] = useState<number>(5);
     const [useSuggestFollowupQuestions, setUseSuggestFollowupQuestions] = useState<boolean>(false);
-    const [userPersona, setUserPersona] = useState<string>("analyst");
-    const [systemPersona, setSystemPersona] = useState<string>("an Assistant");
+    const [userPersona, setUserPersona] = useState<string>("Provident Fund Member");
+    const [systemPersona, setSystemPersona] = useState<string>("Provident Fund Expert");
     // Setting responseLength to 2048 by default, this will effect the default display of the ResponseLengthButtonGroup below.
     // It must match a valid value of one of the buttons in the ResponseLengthButtonGroup.tsx file. 
     // If you update the default value here, you must also update the default value in the onResponseLengthChange method.
@@ -352,12 +352,12 @@ const Chat = () => {
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
                             <div className={styles.avatarLogoContainer}>
-                                <img src={avatar} alt="BSP HealthCare Avatar" className={styles.avatarLogo} />
+                                <img src={avatar} alt="BSP Provident Fund Avatar" className={styles.avatarLogo} />
                             </div>
 
                             {activeChatMode == ChatMode.WorkOnly ? 
                                 <div>
-                                    <h1 className={styles.chatEmptyStateTitle}>Ask Doc</h1>
+                                    {/* <h1 className={styles.chatEmptyStateTitle}>PIPO</h1> */}
                                 </div>
                             : activeChatMode == ChatMode.WorkPlusWeb ?
                                 <div>
@@ -371,9 +371,17 @@ const Chat = () => {
                             {activeChatMode != ChatMode.Ungrounded &&
                                 <div>
                                     <br/>
-                                    <ExampleList onExampleClicked={onExampleClicked} />
+                                    <span className={styles.chatEmptyStateSubtitle}>
+                                        <strong>Notice: </strong>"This Virtual Assistant is in its soft launch phase and is intended for use by BSP Provident Fund members only."
+                                    </span>
                                 </div>
                             }
+                            {/* {activeChatMode != ChatMode.Ungrounded &&
+                                <div>
+                                    <br/>
+                                    <ExampleList onExampleClicked={onExampleClicked} />
+                                </div>
+                            } */}
                             {/* <div className={styles.chatInput}>
                                 <span className={styles.chatEmptyStateSubtitle}>
                                     <strong>Reminder: </strong>By using this application, you acknowledge that the information contained in this document is highly confidential.
@@ -440,7 +448,7 @@ const Chat = () => {
                         )}
                         <QuestionInput
                             clearOnSend
-                            placeholder="Type a new question (e.g. What is health services quota?)"
+                            placeholder="Type a new question..."
                             disabled={isLoading}
                             onSend={question => makeApiRequest(question, defaultApproach, {}, {}, {})}
                             onAdjustClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)}
@@ -451,9 +459,7 @@ const Chat = () => {
                         />
                         <div>
                             <span className={styles.chatEmptyStateSubtitle}>
-                                <strong>Disclaimer: </strong>Please be aware that this AI is still in pilot and its output may not always be accurate or complete.
-                                It is highly recommended to exercise user discretion when interpreting and utilizing the information provided.
-                                For concerns, you may reach HWD through email: hwd_healthcareplan@bsp.gov.ph
+                                <strong>Disclaimer: </strong>Please be aware that this AI-generated response may not be accurate or complete. User discretion is highly advised in interpreting and utilizing the information provided. For concerns, you may reach PFO through email.
                             </span>
                         </div>
                     </div>

@@ -126,7 +126,7 @@ export const Answer = ({
                 </Stack.Item>
                 
             )}
-            {(parsedAnswer.approach == Approaches.ReadRetrieveRead && !!parsedAnswer.work_citations.length) && (
+            {/*(parsedAnswer.approach == Approaches.ReadRetrieveRead && !!parsedAnswer.work_citations.length) && (
                 <Stack.Item>
                     <Stack horizontal wrap tokens={{ childrenGap: 5 }}>
                         <span className={styles.citationLearnMore}>Citations:</span>
@@ -141,7 +141,7 @@ export const Answer = ({
                         })}
                     </Stack>
                 </Stack.Item>
-            )}
+            )*/}
             {parsedAnswer.approach == Approaches.CompareWebWithWork && (
                 <div>
                     <Stack.Item>

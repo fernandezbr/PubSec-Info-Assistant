@@ -2,8 +2,8 @@
 // Licensed under the MIT license.
 
 import { Outlet, NavLink, Link } from "react-router-dom";
-import bsp from "../../assets/bsp.png";
-import hwd from "../../assets/hwd.png";
+import pipologo from "../../assets/pipo-logo.png";
+import pipo from "../../assets/pipo.png";
 import { WarningBanner } from "../../components/WarningBanner/WarningBanner";
 import styles from "./Layout.module.css";
 import { Title } from "../../components/Title/Title";
@@ -33,7 +33,7 @@ export const Layout = () => {
                 <WarningBanner />
                 <div className={styles.headerContainer}>
                     <div className={styles.headerTitleContainer}>
-                        <img src={bsp} alt="BSP HealthCare Plan 2024" className={styles.headerLogo} />
+                        <img src={pipologo} alt="Provident Interactive Partner Online" className={styles.headerLogo} />
                         <h1 className={styles.headerTitle}><Title /></h1>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ export const Layout = () => {
                 <WarningBanner />
                 <div className={styles.headerContainer}>
                     <div className={styles.headerTitleContainer}>
-                        <img src={hwd} alt="BSP HealthCare Plan 2024" className={styles.headerLogo} />
+                        <img src={pipo} alt="PIPO: Provident Fund Interactive Partner Online" className={styles.headerLogo} />
                     </div>
                 </div>
             </footer>

@@ -59,7 +59,8 @@ export function parseAnswerToHtml(answer: string, approach: Approaches, work_cit
                     // LLM Sometimes refers to citations as "source"
                     part = part.replace(/\w+(\d)$/, 'File$1');
                     // Odd parts are citations as the "FileX" moniker
-                    const citation = citation_lookup[part];
+                    // const citation = citation_lookup[part];
+                    const citation = citation_lookup['null'];
                     if (!citation) {
                         // if the citation reference provided by the OpenAI response does not match a key in the citation_lookup object
                         // then return an empty string to avoid a crash or blank citation
